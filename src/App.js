@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useContext} from 'react';
+import TowerSelect from "./components/TowerSelect";
+import {Context} from "./index";
+import FloorSelect from "./components/FloorSelect";
+import DateSelect from "./components/DateSelect";
+import CommentTextarea from "./components/CommentTextarea";
+import {Button, Container} from "react-bootstrap";
+import RoomSelect from "./components/RoomSelect";
+import Card from "./components/Card";
+import style from './style/Container.module.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+const App = () => {
+    const {form} = useContext(Context)
+
+    return (
+        <Container className={style.container}>
+            <Card/>
+        </Container>
+    );
+};
 
 export default App;
