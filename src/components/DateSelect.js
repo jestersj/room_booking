@@ -18,8 +18,11 @@ const DateSelect = () => {
                 customInput={<CustomInput/>}
                 selected={form.date}
                 onChange={(date) => form.setDate(date)}
+                minDate={new Date()}
+                timeFormat="HH:mm"
+                timeCaption="Время"
                 showTimeSelect
-                dateFormat="Pp"
+                dateFormat="MMMM d, yyyy HH:mm"
             />
         </div>
     );
