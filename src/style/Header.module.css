@@ -1,0 +1,16 @@
+.header {
+    background: #2c3234;
+    width: 100%;
+    min-height: 60px;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+h1 {
+    color: azure;
+    margin-left: 10px;
+    margin-right: 10px;
+}

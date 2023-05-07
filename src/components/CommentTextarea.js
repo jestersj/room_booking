@@ -8,7 +8,7 @@ const CommentTextarea = observer(() => {
     return (
         <Form.Control
             as='textarea'
-            rows={3}
+            rows={2}
             placeholder='Комментарий'
             value={form.comment}
             onChange={(e) => form.setComment(e.target.value)}

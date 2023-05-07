@@ -1,7 +1,6 @@
 import React, {useContext} from 'react';
 import {Context} from "../index";
 import Dropdown from "react-bootstrap/Dropdown";
-import {DropdownButton} from "react-bootstrap";
 import {observer} from "mobx-react-lite";
 import style from '../style/Select.module.css'
 

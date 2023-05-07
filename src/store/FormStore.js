@@ -5,7 +5,7 @@ export default class FormStore {
         this._tower = ''
         this._floor = ''
         this._room = ''
-        this._date = new Date()
+        this._date = ''
         this._comment = ''
         makeAutoObservable(this)
     }
@@ -43,7 +43,7 @@ export default class FormStore {
         this._tower = ''
         this._floor = ''
         this._room = ''
-        this._date = new Date()
+        this._date = ''
         this._comment = ''
     }
 }

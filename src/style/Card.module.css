@@ -11,10 +11,21 @@
 .text {
     font-size: 22px;
     color: azure;
+    margin-right: 10px;
 }
 .button_group {
     display: flex;
     justify-content: center;
     text-align: center;
     padding: 10px;
+}
+.button_row {
+    display: flex;
+}
+.date_row {
+    display: flex;
+    align-items: center;
+}
+.btn {
+    margin-right: 10px;
 }

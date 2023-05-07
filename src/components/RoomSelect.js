@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
 import Dropdown from "react-bootstrap/Dropdown";
-import {DropdownButton} from "react-bootstrap";
+import style from '../style/Select.module.css'
 
 const RoomSelect = observer(() => {
     const {form} = useContext(Context)
@@ -11,20 +11,21 @@ const RoomSelect = observer(() => {
         rooms.push(i)
     }
     return (
-        <DropdownButton
-            title={form.room || 'Переговорка'}
-        >
-            {
-                rooms.map(el =>
-                    <Dropdown.Item
-                        key={el}
-                        onClick={() => form.setRoom(el)}
-                    >
-                        {el}
-                    </Dropdown.Item>
-                )
-            }
-        </DropdownButton>
+        <Dropdown>
+            <Dropdown.Toggle>{form.room || 'Переговорка'}</Dropdown.Toggle>
+            <Dropdown.Menu className={style.dropdown_menu}>
+                {
+                    rooms.map(el =>
+                        <Dropdown.Item
+                            key={el}
+                            onClick={() => form.setRoom(el)}
+                        >
+                            {el}
+                        </Dropdown.Item>
+                    )
+                }
+            </Dropdown.Menu>
+        </Dropdown>
     );
 });
 

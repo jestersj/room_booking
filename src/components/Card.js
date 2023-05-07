@@ -11,16 +11,76 @@ import {observer} from "mobx-react-lite";
 
 const Card = () => {
     const {form} = useContext(Context)
+    const parseDate = (date) => {
+        if (!date) {
+            return '--'
+        }
+        const obj = {
+            Mon: 'Пн',
+            Tue: 'Вт',
+            Wed: 'Ср',
+            Thu: 'Чт',
+            Fri: 'Пт',
+            Sut: 'Сб',
+            Sun: 'Вс',
+            Jan: 'января',
+            Feb: 'февраля',
+            Mar: 'марта',
+            Apr: 'апреля',
+            May: 'мая',
+            Jun: 'июня',
+            Jul: 'июля',
+            Aug: 'августа',
+            Sep: 'сентября',
+            Oct: 'октября',
+            Nov: 'ноября',
+            Dec: 'декабря',
+        }
+        const dateArr = date.split(' ')
+        const weekDay = obj[dateArr[0]]
+        const month = obj[dateArr[1]]
+        const day = dateArr[2]
+        const time = dateArr[4]
+        return `${weekDay}, ${day} ${month}, ${time}`
+    }
     return (
            <Container fluid>
                <div className={style.card}>
                    <h1 className={style.h1}>Бронирование переговорной</h1>
-                   <Row style={{alignItems: "center"}}>
+                   <Row style={{alignItems: "flex-start"}}>
                        <Col lg={6}>
-                           <TowerSelect/>
-                           <FloorSelect/>
-                           <RoomSelect/>
-                           <DateSelect/>
+                           <Row>
+                               <Col xs={6}>
+                                   <p className={style.text}>Выберите башню</p>
+                               </Col>
+                               <Col xs={6}>
+                                   <TowerSelect/>
+                               </Col>
+                           </Row>
+                           <Row>
+                               <Col xs={6}>
+                                   <p className={style.text}>Выберите этаж</p>
+                               </Col>
+                               <Col xs={6}>
+                                   <FloorSelect/>
+                               </Col>
+                           </Row>
+                           <Row>
+                               <Col xs={6}>
+                                   <p className={style.text}>Выберите переговорку</p>
+                               </Col>
+                               <Col xs={6}>
+                                   <RoomSelect/>
+                               </Col>
+                           </Row>
+                           <Row>
+                               <Col xs={6}>
+                                   <p className={style.text}>Выберите дату и время</p>
+                               </Col>
+                               <Col xs={6}>
+                                   <DateSelect/>
+                               </Col>
+                           </Row>
                            <CommentTextarea/>
                        </Col>
                        <Col lg={6}>
@@ -28,12 +88,14 @@ const Card = () => {
                            <p className={style.text}>Башня: {form.tower || '--'}</p>
                            <p className={style.text}>Этаж: {form.floor || '--'}</p>
                            <p className={style.text}>Переговорка: {form.room || '--'}</p>
-                           <p className={style.text}>Дата: {String(form.date) || '--'}</p>
+                           <p className={style.text}>Дата: {parseDate(String(form.date))}</p>
                            <Button
+                               className={style.btn}
                                onClick={() => {
                                    console.log(JSON.stringify({
                                        tower: form.tower,
-                                       floor: form.floor,
+                                       floor: String(form.floor),
+                                       room: String(form.room),
                                        date: form.date,
                                        comment: form.comment
                                    }))
