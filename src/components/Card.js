@@ -49,7 +49,7 @@ const Card = () => {
                    <h1 className={style.h1}>Бронирование переговорной</h1>
                    <Row style={{alignItems: "flex-start"}}>
                        <Col lg={6}>
-                           <Row>
+                           <Row className={style.button_row}>
                                <Col xs={6}>
                                    <p className={style.text}>Выберите башню</p>
                                </Col>
@@ -57,7 +57,7 @@ const Card = () => {
                                    <TowerSelect/>
                                </Col>
                            </Row>
-                           <Row>
+                           <Row className={style.button_row}>
                                <Col xs={6}>
                                    <p className={style.text}>Выберите этаж</p>
                                </Col>
@@ -65,7 +65,7 @@ const Card = () => {
                                    <FloorSelect/>
                                </Col>
                            </Row>
-                           <Row>
+                           <Row className={style.button_row}>
                                <Col xs={6}>
                                    <p className={style.text}>Выберите переговорку</p>
                                </Col>
@@ -73,7 +73,7 @@ const Card = () => {
                                    <RoomSelect/>
                                </Col>
                            </Row>
-                           <Row>
+                           <Row className={style.button_row}>
                                <Col xs={6}>
                                    <p className={style.text}>Выберите дату и время</p>
                                </Col>
@@ -103,7 +103,7 @@ const Card = () => {
                            >
                                Отправить
                            </Button>
-                           <Button onClick={() => form.clear()}>Очистить</Button>
+                           <Button className={style.btn} onClick={() => form.clear()}>Очистить</Button>
                        </Col>
                    </Row>
                </div>

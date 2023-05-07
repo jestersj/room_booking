@@ -6,7 +6,7 @@
 .h1 {
     color: azure;
     text-align: center;
-    margin: 15px;
+    margin: 15px 0 40px 0;
 }
 .text {
     font-size: 22px;
@@ -20,7 +20,7 @@
     padding: 10px;
 }
 .button_row {
-    display: flex;
+    align-items: center;
 }
 .date_row {
     display: flex;
@@ -28,4 +28,5 @@
 }
 .btn {
     margin-right: 10px;
+    width: 100px;
 }

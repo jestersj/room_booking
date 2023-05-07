@@ -9,7 +9,7 @@ const TowerSelect = observer(() => {
     const towers = ['А', 'Б']
     return (
         <Dropdown>
-            <Dropdown.Toggle className={style.select}>
+            <Dropdown.Toggle>
                 {form.tower || 'Башня'}
             </Dropdown.Toggle>
             <Dropdown.Menu>
